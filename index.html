@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍵 Tea Talks | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ✅ HEADER -->
+  <header class="kfc-header">
+    <h1>Tea Talks</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="combos.html">Combos</a>
+      <a href="contact.html">Contact</a>
+      <a href="track.html">Track</a>
+      <a href="cart.html">Cart <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <!-- ✅ HERO SECTION -->
+  <section class="hero" style="background-image: url('./img/menu-background.jpg');">
+    <div class="hero-content">
+      <h2>Welcome to Tea Talks 🍵</h2>
+      <p>Savor handcrafted brews with bold flavors & elegant style</p>
+      <a href="menu.html" class="cta-btn">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- ✅ HIGHLIGHTS -->
+  <section class="highlights">
+    <div class="highlight-card">
+      <h3>✨ Signature Teas</h3>
+      <p>From Rose Milk to Herbal Chills</p>
+    </div>
+    <div class="highlight-card">
+      <h3>🔥 Combos & Buckets</h3>
+      <p>Curated blends for every mood</p>
+    </div>
+    <div class="highlight-card">
+      <h3>🎁 Perfect Gifting</h3>
+      <p>Send love in a cup to your dear ones</p>
+    </div>
+  </section>
+
+  <!-- ✅ TESTIMONIALS -->
+  <section class="testimonials">
+    <h2>💬 Tea Lovers Speak</h2>
+    <div class="testimonial-card">
+      <p>"Tea Talks is my go-to for cozy evenings. The Rose Milk is divine!"</p>
+      <h4>- Aishwarya, Chennai</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"The combos are perfect for gifting. Love the Herbal Harmony pack!"</p>
+      <h4>- Rahul, Bengaluru</h4>
+    </div>
+  </section>
+
+  <!-- ✅ NEWSLETTER POPUP (Optional Bonus) -->
+  <div id="newsletter-popup" class="success-modal" style="display:none;">
+    💌 Get exclusive tea offers! <br/>
+    <button class="cta-btn" onclick="closePopup()">Got it!</button>
+  </div>
+
+  <!-- ✅ FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Tea Talks | Brewed with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

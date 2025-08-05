@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍵 Tea Talks | Menu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ✅ HEADER -->
+  <header class="kfc-header">
+    <h1>Tea Talks</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="combos.html">Combos</a>
+      <a href="contact.html">Contact</a>
+      <a href="track.html">Track</a>
+      <a href="cart.html">Cart <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <!-- ✅ MAIN MENU SECTION -->
+  <main class="menu-container">
+    <!-- Sidebar Categories -->
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul>
+        <li class="active" data-category="all">All</li>
+        <li data-category="milk">🥛 Milk Teas</li>
+        <li data-category="herbal">🌿 Herbal Teas</li>
+        <li data-category="hot">🔥 Hot Teas</li>
+        <li data-category="cold">❄️ Cold Brews</li>
+      </ul>
+    </aside>
+
+    <!-- Menu Cards -->
+    <section class="menu-list" id="menu-list">
+      <!-- Items dynamically injected by script.js -->
+    </section>
+  </main>
+
+  <!-- ✅ FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Tea Talks | Sip. Savor. Smile.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

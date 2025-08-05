@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍵 Tea Talks | Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ✅ HEADER -->
+  <header class="kfc-header">
+    <h1>Tea Talks</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="combos.html">Combos</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="track.html">Track</a>
+      <a href="cart.html">Cart <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <!-- ✅ CONTACT FORM -->
+  <section class="contact-section">
+    <h2>📞 Talk to Us</h2>
+    <p>Have a tea recommendation, event idea, or just want to say hi?</p>
+
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="cta-btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ✅ SUCCESS MESSAGE -->
+  <div id="contact-success" class="success-modal">
+    ✅ Message sent! We’ll steep on it ☕
+  </div>
+
+  <!-- ✅ FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Tea Talks | We Love Hearing from You</p>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍵 Tea Talks | Combos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ✅ HEADER -->
+  <header class="kfc-header">
+    <h1>Tea Talks</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="combos.html" class="active">Combos</a>
+      <a href="contact.html">Contact</a>
+      <a href="track.html">Track</a>
+      <a href="cart.html">Cart <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <!-- ✅ COMBO DEALS -->
+  <section class="combo-deals">
+    <h2>🔥 Combo Deals</h2>
+
+    <div class="combo-card">
+      <img src="./img/rose-combo.jpg" alt="Rose Romance Combo" style="width:100%;border-radius:8px;" />
+      <h3>Rose Romance Combo</h3>
+      <p>Rose Milk + Masala Chai + Herbal Green</p>
+      <p class="price">₹229</p>
+      <button class="add-to-cart" data-item="Rose Romance Combo" data-price="229">Add to Cart</button>
+    </div>
+
+    <div class="combo-card">
+      <img src="./img/herbal-combo.jpg" alt="Herbal Harmony Combo" style="width:100%;border-radius:8px;" />
+      <h3>Herbal Harmony Combo</h3>
+      <p>Tulsi Herbal + Green Bliss + Lemon Brew</p>
+      <p class="price">₹249</p>
+      <button class="add-to-cart" data-item="Herbal Harmony Combo" data-price="249">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- ✅ BUCKETS -->
+  <section class="tea-buckets">
+    <h2>🪣 Buckets</h2>
+
+    <div class="bucket-card">
+      <h3>Morning Boost Bucket</h3>
+      <p>Masala Chai + Herbal Brew + Cold Rose</p>
+      <p class="price">₹199</p>
+      <button class="add-to-cart" data-item="Morning Boost Bucket" data-price="199">Add to Cart</button>
+    </div>
+
+    <div class="bucket-card">
+      <h3>Evening Relax Bucket</h3>
+      <p>Herbal Green + Tulsi Tea + Sweet Rose</p>
+      <p class="price">₹219</p>
+      <button class="add-to-cart" data-item="Evening Relax Bucket" data-price="219">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- ✅ FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Tea Talks | Perfect Combos for Every Mood</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
