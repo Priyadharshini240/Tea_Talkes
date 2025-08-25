@@ -3,72 +3,580 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🍵 Tea Talks | Home</title>
-  <link rel="stylesheet" href="./style.css" />
+  <meta name="description" content="Tea Talks - Premium handcrafted teas with bold flavors and elegant style. Sip, savor, and smile with our collection." />
+  <title>🍵 Tea Talks | Premium Handcrafted Teas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Optimized CSS with variables and efficient selectors */
+    :root {
+      --primary: #c25151;
+      --primary-dark: #a63d3d;
+      --secondary: #a6b37d;
+      --secondary-dark: #8ea46d;
+      --light: #fffaf5;
+      --dark: #333;
+      --gray: #555;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 8px 18px rgba(0, 0, 0, 0.15);
+      --radius: 12px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* Improved header with sticky behavior */
+    .header {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header h1 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .cart-count {
+      background: var(--primary);
+      color: var(--white);
+      padding: 2px 6px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      margin-left: 5px;
+    }
+
+    /* Mobile menu */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    /* Enhanced hero section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23ffe4e1"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23fffaf5" stroke-width="2"/></svg>');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      color: var(--white);
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Improved card components */
+    .section-title {
+      text-align: center;
+      margin: 3rem 0;
+      color: var(--primary);
+      font-size: 2.2rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-img {
+      height: 200px;
+      background: linear-gradient(45deg, #f8d7d7, #e6f0c3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    /* Testimonials section */
+    .testimonials {
+      background: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto 0;
+    }
+
+    .testimonial-card {
+      background: var(--light);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .testimonial-card i {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 2rem;
+      color: var(--primary);
+      opacity: 0.2;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card h4 {
+      color: var(--primary);
+    }
+
+    /* Newsletter section */
+    .newsletter {
+      background: linear-gradient(to right, #ffe4e1, #fffaf5);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-input {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: var(--radius);
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .social-links a {
+      color: var(--white);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { 
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 0.5rem;
+      }
+      
+      .nav.active {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+      
+      .hero {
+        min-height: 80vh;
+      }
+      
+      .card-grid {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+      }
+    }
+
+    /* Accessibility improvements */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Focus styles for keyboard navigation */
+    a:focus,
+    button:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Reduced motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- ✅ HEADER -->
-  <header class="kfc-header">
+  <!-- Improved Header with better semantics -->
+  <header class="header">
     <h1>Tea Talks</h1>
-    <nav>
-      <a href="./index.html" class="active">Home</a>
-      <a href="./menu.html">Menu</a>
-      <a href="./combos.html">Combos</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./track.html">Track</a>
-      <a href="./cart.html">Cart <span id="cart-count">0</span></a>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="./index.html" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="./menu.html"><i class="fas fa-list"></i> Menu</a>
+      <a href="./combos.html"><i class="fas fa-box"></i> Combos</a>
+      <a href="./contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="./track.html"><i class="fas fa-truck"></i> Track</a>
+      <a href="./cart.html"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="cart-count">0</span></a>
     </nav>
   </header>
 
-  <!-- ✅ HERO SECTION -->
-  <section class="hero" style="background-image: url('./img/menu-background.jpg');">
-    <div class="hero-content">
-      <h2>Welcome to Tea Talks 🍵</h2>
-      <p>Savor handcrafted brews with bold flavors & elegant style</p>
-      <a href="./menu.html" class="cta-btn">Explore Menu</a>
+  <!-- Enhanced Hero Section -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <h2 id="hero-heading">Welcome to Tea Talks 🍵</h2>
+    <p>Savor handcrafted brews with bold flavors & elegant style</p>
+    <a href="./menu.html" class="btn">Explore Menu</a>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights" aria-labelledby="highlights-heading">
+    <h2 id="highlights-heading" class="section-title">Our Highlights</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-img">
+          <i class="fas fa-mug-hot"></i>
+        </div>
+        <div class="card-content">
+          <h3>✨ Signature Teas</h3>
+          <p>From Rose Milk to Herbal Chills</p>
+          <a href="./menu.html" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <i class="fas fa-gift"></i>
+        </div>
+        <div class="card-content">
+          <h3>🔥 Combos & Buckets</h3>
+          <p>Curated blends for every mood</p>
+          <a href="./combos.html" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="card-content">
+          <h3>🎁 Perfect Gifting</h3>
+          <p>Send love in a cup to your dear ones</p>
+          <a href="./combos.html" class="btn">Explore</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ✅ HIGHLIGHTS -->
-  <section class="highlights">
-    <div class="highlight-card">
-      <h3>✨ Signature Teas</h3>
-      <p>From Rose Milk to Herbal Chills</p>
-    </div>
-    <div class="highlight-card">
-      <h3>🔥 Combos & Buckets</h3>
-      <p>Curated blends for every mood</p>
-    </div>
-    <div class="highlight-card">
-      <h3>🎁 Perfect Gifting</h3>
-      <p>Send love in a cup to your dear ones</p>
-    </div>
-  </section>
-
-  <!-- ✅ TESTIMONIALS -->
-  <section class="testimonials">
-    <h2>💬 Tea Lovers Speak</h2>
-    <div class="testimonial-card">
-      <p>"Tea Talks is my go-to for cozy evenings. The Rose Milk is divine!"</p>
-      <h4>- Aishwarya, Chennai</h4>
-    </div>
-    <div class="testimonial-card">
-      <p>"The combos are perfect for gifting. Love the Herbal Harmony pack!"</p>
-      <h4>- Rahul, Bengaluru</h4>
+  <!-- Testimonials Section -->
+  <section class="testimonials" aria-labelledby="testimonials-heading">
+    <h2 id="testimonials-heading" class="section-title">Tea Lovers Speak</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <i class="fas fa-quote-left"></i>
+        <p>"Tea Talks is my go-to for cozy evenings. The Rose Milk is divine!"</p>
+        <h4>- Aishwarya, Chennai</h4>
+      </div>
+      <div class="testimonial-card">
+        <i class="fas fa-quote-left"></i>
+        <p>"The combos are perfect for gifting. Love the Herbal Harmony pack!"</p>
+        <h4>- Rahul, Bengaluru</h4>
+      </div>
+      <div class="testimonial-card">
+        <i class="fas fa-quote-left"></i>
+        <p>"Their teas are always fresh and aromatic. Best tea place in town!"</p>
+        <h4>- Priya, Mumbai</h4>
+      </div>
     </div>
   </section>
 
-  <!-- ✅ NEWSLETTER POPUP (Optional Bonus) -->
-  <div id="newsletter-popup" class="success-modal" style="display:none;">
-    💌 Get exclusive tea offers! <br/>
-    <button class="cta-btn" onclick="closePopup()">Got it!</button>
-  </div>
+  <!-- Newsletter Section -->
+  <section class="newsletter" aria-labelledby="newsletter-heading">
+    <h2 id="newsletter-heading" class="section-title">Stay Updated</h2>
+    <p>Subscribe to our newsletter for exclusive offers and new flavors</p>
+    <form class="newsletter-form">
+      <input type="email" class="form-input" placeholder="Your email address" required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+  </section>
 
-  <!-- ✅ FOOTER -->
+  <!-- Footer -->
   <footer class="footer">
+    <div class="social-links">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
     <p>© 2025 Tea Talks | Brewed with ❤️</p>
+    <p>123 Tea Street, Brewville | +91 98765 43210</p>
   </footer>
 
-  <script src="./script.js"></script>
+  <!-- Optimized JavaScript -->
+  <script>
+    // Performance optimization: Defer non-critical JS
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const nav = document.querySelector('.nav');
+      
+      if (menuBtn && nav) {
+        menuBtn.addEventListener('click', () => {
+          nav.classList.toggle('active');
+          menuBtn.innerHTML = nav.classList.contains('active') ? 
+            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+      }
+      
+      // Update cart count
+      const updateCartCount = () => {
+        try {
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const countElement = document.getElementById('cart-count');
+          if (countElement) {
+            const count = cart.reduce((total, item) => total + (item.qty || 0), 0);
+            countElement.textContent = count;
+          }
+        } catch (e) {
+          console.error('Error updating cart count:', e);
+        }
+      };
+
+      // Initialize
+      updateCartCount();
+
+      // Listen for storage events to update cart count across tabs
+      window.addEventListener('storage', updateCartCount);
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Newsletter form submission
+      const newsletterForm = document.querySelector('.newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          alert(`Thank you for subscribing with ${email}! You'll hear from us soon.`);
+          this.reset();
+        });
+      }
+    });
+
+    // Lazy loading for images (would be implemented with real images)
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+    //   
+    //   if ('IntersectionObserver' in window) {
+    //     const lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+    //       entries.forEach(function(entry) {
+    //         if (entry.isIntersecting) {
+    //           const lazyImage = entry.target;
+    //           lazyImage.src = lazyImage.dataset.src;
+    //           lazyImage.classList.remove('lazy');
+    //           lazyImageObserver.unobserve(lazyImage);
+    //         }
+    //       });
+    //     });
+    //     
+    //     lazyImages.forEach(function(lazyImage) {
+    //       lazyImageObserver.observe(lazyImage);
+    //     });
+    //   }
+    // });
+  </script>
 </body>
 </html>
